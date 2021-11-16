@@ -1,3 +1,18 @@
+    @media (min-width:992px) and (max-width:1199px){
+        .heading h3 {
+            font-size: 44px;
+          
+        }
+        #home .home-text span {
+            font-size: 46px;
+            
+        }
+        #resume .education-tabs .education-item .education-inner .education-content::after {
+            right: 105.6%;
+        }  
+
+    }
+
 @media (max-width:991px){
     #home .home-text span {
         font-size: 43px;
@@ -10,9 +25,14 @@
         width: 700px; 
     }
     .heading h3 {
-        font-size: 55px;
+        font-size: 38px;
     }
-    
+    #resume .education-tabs .education-item {
+        padding-left: 28px;
+    }
+    #resume .education-tabs .education-item .education-inner .education-content::after {
+        right: 103%;     
+    }    
 }
 @media (min-width:576px) and (max-width:767px){
     .offcanvas-start {
@@ -26,7 +46,16 @@
         
     }
     .heading h3 {
-        font-size: 50px;
+        font-size: 41px;
+    }
+    #resume .resume-tabs ul li {
+        width: 100% !important;
+        text-align: center;
+    }
+    #resume .education-tabs .education-item .education-inner .education-content::after {
+        right: 104%;
+        
+
     }
     
     
@@ -52,8 +81,53 @@
         width: 340px;
         
     }
+    .heading span {
+        font-size: 10px;
+      
+    }
     .heading h3 {
         font-size: 44px;
     }
-    
+    #resume .resume-tabs ul li {
+        width: 100% !important;
+        text-align: center;
+    }
+    #resume .resume-tabs ul li .nav-link {
+        padding: 19px 0;
+        
+    }
+    #resume .education-tabs .education-item .education-inner .education-content::after {
+        right: 105%;
+    }
+    #resume .education-tabs .education-item .education-inner .education-content {
+        padding: 27px 14px;
+    }
+    #resume .education-tabs .education-item .education-inner .education-content .education-text {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+    #resume .education-tabs .education-item .education-inner .education-content .education-text a {
+        margin-top: 18px;
+    }
+}
+@media(max-width:479px){
+    .heading h3 {
+        font-size: 30px;
+    }
+    #home .home-text span {
+        font-size: 30px;
+    }
+    #resume .education-tabs .education-item {
+        padding-left: 17px;
+    }
+    #resume .education-tabs .education-item .education-inner .education-content::after {
+        right: 103%;
+    }
+    #resume .education-tabs h4 {
+        font-size: 25px;
+    }
+    #resume .skills-tabs h4 {
+        font-size: 25px;
+        
+    }
 }

@@ -4,11 +4,25 @@ $barndColor: #ff014f;
 $font-poppins:'Poppins', sans-serif;
 $borderColor: #121415;
 $background: #212428;
+$pcolor: #878e99;
+$box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
 @mixin trans($time) {
-    transition:   $time;
-    -webkit-transition:   $time;
-    -o-transition:   $time;
-    -moz-transition:   $time;
+    transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -o-transition:  all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+}
+@mixin before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right bottom, #212428, #16181c);
+    z-index: -1;
+    border-radius: 10px;
+    opacity: 0;
 }
 
 /* ====================
@@ -97,7 +111,7 @@ nav{
 }
 .bg{
     position: fixed !important;
-    z-index: 9999;
+    z-index: 99;
     top: 0;
     left: 0;
     box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
@@ -373,6 +387,387 @@ home section end
                     i{
                         visibility: visible;
                         opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+/* ==================
+features-section end
+==================== */
+#portfolio{
+    background: $background;
+    padding: 80px 0px;
+    
+    .portfolio-item{
+        padding: 30px;
+        box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+        border-radius: 15px;
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+        &:hover{
+            &::before{
+                opacity: 1;
+            }
+            .portfolio-content{
+                img{
+                    transform: scale(1.1);
+                }
+            }
+        }
+        &::before{
+            @include before();
+            @include trans(0.4s)
+        }
+        .portfolio-content{
+            border-radius: 15px;
+            overflow: hidden;
+            img{
+                transform: scale(1);
+                @include trans(0.4s);
+            }
+        }
+        .protfolio-text{
+            color: $color-one;
+            padding-top: 20px;
+            .text{
+                span{
+                    font-size: 13px;
+                    color: $color-one;
+                    font-weight: 500;
+                    color: $barndColor;
+                    font-family: $font-secondary;
+                }
+            }
+            .icon{
+                font-size: 13px;
+                font-weight: 500;
+                font-family: $font-secondary;
+                span{
+                    &:first-of-type{
+                        color: #ffffff;
+                        @include trans(0.4s);
+                        cursor: pointer;
+                        &:hover{
+                            color: $barndColor;
+                        }
+                    }
+                }
+            }
+            .text-two{
+                h4{
+                    font-family: $font-poppins;
+                    font-weight: 600;
+                    padding-top: 10px;
+                    @include trans(0.4s);
+                    cursor: pointer;
+                    &:hover{
+                        color: $barndColor;
+                        span{
+                            font-size: 20px;
+                        }
+                    }
+                    span{
+                        font-size: 0;
+                        @include trans(0.4s);
+                        color: $barndColor;
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .modal{
+        background: $background;
+        .modal-content{
+            background: $background;
+            border-radius: 10px;
+            box-shadow: $box-shadow;
+            border: none;
+            .modal-img{
+                border-radius: 10px;
+                overflow: hidden;
+            }
+            .modal-header{
+                border-bottom: none;
+                padding: 0 !important;
+                .btn-close{
+                    background: none !important;
+                    padding: 0 !important;
+                    width: auto !important;
+                    height: auto !important;
+                    i{
+                        width: 50px;
+                        height: 50px;
+                        line-height: 50px;
+                        text-align: center;
+                        color: $barndColor;
+                        font-size: 25px;
+                        box-shadow: $box-shadow;
+                        border-radius: 50% !important;
+                    }
+                }
+            }
+            .modal-footer{
+                border-top: none;
+                padding: 0 !important;
+        
+            }
+            .modal-text{
+                span{
+                    font-family: $font-secondary;
+                    font-size: 16px;
+                    color: $pcolor;
+                    opacity: 0.9;
+                    font-weight: 500;
+                    line-height: 30px;
+                    display: block;
+                    margin-bottom: 5px;
+    
+                }
+                h4{
+                    font-family: $font-secondary;
+                    color: $color-one;
+                    font-weight: 700;
+                    font-size: 34px;
+                    line-height: 61px;
+                }
+                p{
+                    font-size: 18px;
+                    font-weight: 400;
+                    font-family: $font-poppins;
+                    color: $pcolor;
+                    line-height: 30px;
+                    margin-top: 10px;
+                }
+                a{
+                    box-shadow: $box-shadow;
+                    color: $barndColor;
+                    text-transform: uppercase;
+                    font-family: $font-poppins;
+                    font-weight: 500;
+                    font-size: 14px;
+                    padding: 10px 20px !important;
+                    margin-left: 10px;
+                    position: relative;
+                    z-index: 1;
+                    border-radius: 5px !important;
+                    &:first-of-type{
+                        margin-left: 0!important;
+                    }
+                    span{
+                        display: inline-block;
+                        color: $barndColor;
+                        font-size: 13px;
+                    }
+                    &:hover{
+                        &::before{
+                            opacity: 1;
+                        }
+                    }
+                    &::before{
+                        @include before();
+                        @include trans(0.4s);
+                    }
+                    
+                }
+            }
+        }
+    }   
+}
+/* ==================
+porfolio section end 
+===================== */
+#resume{
+    padding: 80px 0px;
+    background: $background;
+    .resume-tabs{
+        ul{
+            border: none;
+            box-shadow: $box-shadow;
+            border-radius: 10px;
+            li{
+                width: 25% !important;
+                text-align: center;     
+                .nav-link{
+                   &:hover{
+                       border: none !important;
+                       box-shadow: $box-shadow;
+                       background: $background;
+                       border-radius: 10px;
+                       color: $barndColor;
+                       
+                       
+                   }
+                   &:focus{
+                       border: none !important;
+                   }
+                   &:focus-visible{
+                       border: none !important;
+                   }
+                   width: 100%;
+                   padding: 30px 0;
+                   color: $color-one;
+                   font-size: 16px;
+                   font-weight: 700;
+                   font-family: $font-secondary;
+                   @include trans(0.4s);
+                   text-transform: capitalize;
+                }
+                .active{
+                    box-shadow: $box-shadow;
+                    background: $background;
+                    border: none;
+                    border-radius: 10px;
+                    color: $barndColor;
+                }
+            }
+        }
+    }
+    .education-tabs{
+        span{
+            font-size: 14px;
+            color: $barndColor;
+            font-family: $font-secondary;
+            font-weight: 400;
+        }
+        h4{
+            color: $color-one;
+            font-size: 36px;
+            font-family: $font-secondary;
+            font-weight: 700;
+            line-height: 62px;
+        }
+        .education-item{
+            padding-left: 31px;
+            border-left: 5px solid $borderColor;
+            margin-top: 40px;
+            .education-inner{
+                    background: $background;
+                    border-radius: 10px;
+                    box-shadow: $box-shadow;
+                    position: relative;
+                    z-index: 1;
+                    &::before{
+                        @include before();
+                        @include trans(0.4s);
+                    }
+                    &:hover{
+                        &::before{
+                            opacity: 1;
+                        }
+                    }
+                .education-content{
+                    padding: 45px 40px; 
+                    position: relative;
+                    z-index: 1;
+                    &::before{
+                        position: absolute;
+                        content: "";
+                        width: 28px;
+                        height: 5px;
+                        right: 100%;
+                        top: 63px;
+                        transform: translateY(-7px);
+                        background: #1b1c1d;
+                        z-index: 0;
+                    }
+                    &::after{
+                        position: absolute;
+                        content: "";
+                        width: 20px;
+                        height: 20px;
+                        border: 5px solid #17191c;
+                        border-radius: 100%;
+                        right: 104%;
+                        top: 55px;
+                        transform: translateY(-7px);
+                        background: #222529;
+                        @include trans(0.4s);
+                        
+                    }
+                    &:hover{
+                        &::after{
+                            background: $barndColor;
+                        }
+                    }
+                   .education-text{
+                    padding-bottom: 30px;
+                    border-bottom: 1px solid $borderColor;
+                    h5{
+                        font-size: 24px;
+                        font-weight: 500;
+                        line-height: 39px;
+                        font-family: $font-poppins;
+                        color: $color-one;
+                    }
+                    span{
+                        font-size: 14px;
+                        font-family: $font-poppins;
+                        color: $pcolor;
+                        font-size: 14px;
+                        font-weight: 500;
+                    }
+                    a{
+                        color: $barndColor !important;
+                        font-family: $font-poppins;
+                        font-size: 14px;
+                        font-weight: 500;
+                        position: relative;
+                        box-shadow: $box-shadow;
+                        z-index: 1;
+                        &::before{
+                            @include before();
+                            z-index: -1;
+                            opacity: 1;
+
+                        }
+                    }
+                   }
+                    p{
+                        font-size: 18px;
+                        line-height: 28px;
+                        color: $pcolor;
+                        font-family: $font-poppins;
+                        font-weight: 300;
+                        padding-top: 12px;
+                    }
+                }
+            }
+        }
+    }
+    /* ================
+    education tabs end
+    ==================== */
+    .skills-tabs{
+        span{
+            font-size: 14px;
+            color: $barndColor;
+            font-family: $font-secondary;
+            font-weight: 400;
+        }
+        h4{
+            color: $color-one;
+            font-size: 36px;
+            font-family: $font-secondary;
+            font-weight: 700;
+            line-height: 62px;
+        }
+        .progress-wrapper{
+            .skills{
+                .skills-text{
+                    span{
+                        color: $color-one;
+                    }
+                }
+                .progress{
+                    height: 8px !important;
+                    .progress-bar{
+                        background: linear-gradient(145deg, #f02981 0%, #c81901 100%) !important;
+                        height: 100%;
+                        border-radius: 0.25rem;
                     }
                 }
             }

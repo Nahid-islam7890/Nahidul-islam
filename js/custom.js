@@ -24,3 +24,5 @@ $(".offcanvas ul li a").click(function(){
 $(".navbar-toggler").click(function(){
     $(".offcanvas").fadeIn();
 })
+
+new WOW().init();
